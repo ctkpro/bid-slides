@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTK Pro 標案簡報庫</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#6b6b6b; --line:#e2e2e2; --blue:#2f4fb0; --bg:#ffffff;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',-apple-system,'Helvetica Neue',sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.5; min-height:100%;
+  }
+  .wrap{ max-width:980px; margin:0 auto; padding:7vh 6vw 12vh; }
+
+  header{ border-bottom:1px solid var(--line); padding-bottom:5vh; margin-bottom:6vh; }
+  .logos{ display:flex; align-items:center; gap:18px; margin-bottom:4vh; }
+  .logos img.ctk{ height:26px; width:auto; }
+  .kicker{ color:var(--muted); font-weight:500; letter-spacing:.04em; font-size:clamp(14px,1.6vw,18px); margin-bottom:1.6vh; }
+  h1.title{ font-weight:900; font-size:clamp(34px,5.6vw,64px); line-height:1.12; letter-spacing:-.01em; }
+  h1.title .em{ color:var(--blue); }
+  .subtitle{ color:var(--muted); font-weight:500; font-size:clamp(16px,2vw,22px); margin-top:2.4vh; }
+
+  h2.section{ font-weight:900; font-size:clamp(22px,3vw,32px); margin:7vh 0 3vh; letter-spacing:-.01em; }
+  h2.section:first-of-type{ margin-top:0; }
+  h2.section .n{ color:var(--blue); margin-right:.4em; }
+
+  .cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
+  a.card{
+    display:block; text-decoration:none; color:inherit;
+    border:1px solid var(--line); border-radius:16px; padding:26px 26px 28px; background:var(--bg);
+    transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  a.card:hover{ border-color:var(--blue); box-shadow:0 14px 38px rgba(47,79,176,.12); transform:translateY(-2px); }
+  .card .date{ color:var(--blue); font-weight:700; font-size:clamp(14px,1.6vw,17px); letter-spacing:.02em; }
+  .card .card-title{ font-weight:900; font-size:clamp(19px,2.3vw,24px); margin-top:.8em; line-height:1.25; }
+  .card .card-desc{ color:var(--muted); font-size:clamp(14px,1.6vw,16px); margin-top:.9em; }
+  .card .arrow{ color:var(--blue); font-weight:700; font-size:15px; margin-top:1.4em; display:inline-flex; align-items:center; gap:.4em; }
+
+  a.card.soon{ border-style:dashed; opacity:.65; pointer-events:none; }
+  a.card.soon .date,.card.soon .arrow{ color:var(--muted); }
+
+  footer{ margin-top:9vh; padding-top:5vh; border-top:1px solid var(--line); color:var(--muted); font-size:clamp(13px,1.5vw,16px); }
+  footer .brand{ font-weight:900; color:var(--ink); font-size:clamp(16px,2vw,20px); }
+  footer a{ color:var(--blue); text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:560px){ .cards{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logos">
+      <img class="ctk" src="images/ctkpro-logo.png" alt="CTK Pro" onerror="this.style.display='none'">
+    </div>
+    <p class="kicker">CTK Pro 標案簡報庫</p>
+    <h1 class="title">標案評選 <span class="em">·</span> 服務建議書簡報</h1>
+    <p class="subtitle">CTK Pro 竑盛科技參加各標案評選用的簡報 — 白底極簡、投影機友善、單檔自足 HTML。</p>
+  </header>
+
+  <!-- ============ 標案簡報 ============ -->
+  <h2 class="section"><span class="n">▸</span>標案簡報</h2>
+  <div class="cards">
+
+    <a class="card" href="yilan-bids/index.html">
+      <div class="date">案號 SOSL115010 · 宜蘭縣</div>
+      <div class="card-title">育兒資源網 2.0｜服務建議書</div>
+      <div class="card-desc">以兒童為核心、自動化減輕承辦負擔、資安守護親子個資。一童一號主鍵重構、三端一條龍、期程與預算（13 頁＋備詢 QA）。</div>
+      <span class="arrow">開啟投影片 →</span>
+    </a>
+
+  </div>
+
+  <!-- ============ 公司介紹 ============ -->
+  <h2 class="section"><span class="n">▸</span>公司介紹</h2>
+  <div class="cards">
+
+    <a class="card" href="ctkpro-intro/index.html">
+      <div class="date">CTK Pro</div>
+      <div class="card-title">AI × 創新與政府補助</div>
+      <div class="card-desc">把「想法」變成「上線的產品」。CTK Pro 公司介紹簡報（7 頁），亦為本庫的投影片風格基準，可作為標案開場。</div>
+      <span class="arrow">開啟投影片 →</span>
+    </a>
+
+  </div>
+
+  <footer>
+    <p class="brand">CTK Pro 竑盛科技</p>
+    <p style="margin-top:.6em;">標案評選簡報工作庫｜<a href="https://ctkpro.com">ctkpro.com</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

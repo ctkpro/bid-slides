@@ -1,0 +1,24 @@
+{
+  "name": "ctkpro-bid-slides",
+  "version": "1.0.0",
+  "description": "CTK Pro 標案評選簡報工作庫（白底極簡 HTML 投影片 + 作圖工具）",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "gen-images": "node scripts/gen-images.mjs",
+    "shoot": "node scripts/shoot.mjs"
+  },
+  "author": "CTK Pro",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "dotenv": "^16.3.1",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.40.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

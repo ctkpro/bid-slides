@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Environment variables（含 GEMINI_API_KEY，切勿入 git）
+.env
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Logs / temp
+*.log
+temp/
+.playwright-mcp/
