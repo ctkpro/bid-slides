@@ -42,7 +42,7 @@ bid-slides/
 - **字體**：Noto Sans TC（900/700/500/400）。
 - **版型**：`yilan-bids` 用 1280×720 `#stage` 縮放舞台（dense 內容不溢出）；新標案**複製它當骨架**最省事。
 - **元件 / 導覽**：元件庫（`.card`/`.compare2`/`.gantt`/`.bud`/`.logo-wall`/`.thanks`/`#qa` 等）與導覽
-  （右下可點頁碼 `‹ x / y ›`、← →／空白／Home／End、點畫面兩側、F 全螢幕、Q 備詢、進度條）皆見
+  （右下可點頁碼 `‹ x / y ›`、← →／空白／Home／End、**點畫面左右各 1/6 才翻頁**（中間 2/3 留給簡報時選字強調，不誤翻頁）、F 全螢幕、Q 備詢、進度條）皆見
   `yilan-bids/index.html`，照搬即可。新增一頁＝加一個 `.slide`，頁碼自動算。
 - **DEMO 影片（現場示範，不切畫面）**：見 `yilan-bids` P4／P5。影片放標案資料夾根目錄、**檔名不要有空白**（`demo0.mp4`…）、靜音 `.mp4`。
   頁面放 `<button class="demo-btn" onclick="playDemos(['demo0.mp4'])">`；連播多段傳陣列 `playDemos(['demo1.mp4','demo2.mp4'])`，前段 `ended` 自動接下段（尺寸不同沒關係，`object-fit:contain` 各自滿版）。

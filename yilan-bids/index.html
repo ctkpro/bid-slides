@@ -234,11 +234,11 @@
     <h2 class="page-title">報名流程、會員綁定、資訊安全 —<br>本案要的，<span class="em">正是我們最熟的</span></h2>
     <div class="body">
       <div class="grid" style="grid-template-columns:1.05fr 1.35fr;">
-        <div class="card fill" style="justify-content:center;">
+        <div class="card" style="justify-content:center;border:2px solid var(--blue);">
           <h3 style="font-size:26px;">CTK Pro ｜ 竑盛科技</h3>
-          <p style="font-size:20px;">15 年數位開發、<b style="color:#fff;">70+ 網站</b>長期維運。
-            我們不只做版面，而是把<b style="color:#fff;">報名、審核、會員與資安</b>整合成可長期維運、可交接的系統。</p>
-          <div class="card-foot" style="color:#FAD4E2;border-top-color:rgba(255,255,255,.25)">服務政府單位 · 上市櫃企業 · 教育機構</div>
+          <p style="font-size:20px;">15 年數位開發、<b style="color:var(--blue);">70+ 網站</b>長期維運。
+            我們不只做版面，而是把<b style="color:var(--blue);">報名、審核、會員與資安</b>整合成可長期維運、可交接的系統。</p>
+          <div class="card-foot">服務政府單位 · 上市櫃企業 · 教育機構</div>
         </div>
         <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px;">
           <div class="card"><h3><span class="dot"></span>會議報名與流程</h3><p>熟悉活動報名、審核、報到流程設計，對應本案報名報到。</p></div>
@@ -301,7 +301,7 @@
         <div class="axis-msg">
           <div class="big">識別主鍵<br>由「家長」改為<em>「兒童」</em></div>
           <p>同一兒童只有<b class="now">一筆主檔、一個候補序位</b>；監護人改以綁定關係處理，公平看得見。</p>
-          <button class="demo-btn" style="margin-top:14px;align-self:flex-start;" onclick="playDemos(['demo0.mp4'])"><span class="ic">▶</span>播放示範｜一童一號</button>
+          <button class="demo-btn" style="margin-top:14px;align-self:flex-start;" onclick="playDemos(['demo0.mp4'])">示範</button>
         </div>
       </div>
     </div>
@@ -324,11 +324,11 @@
         </div>
         <div class="card" style="border-top:5px solid var(--blue-700);">
           <h3><span class="dot"></span>承辦端</h3>
-          <ul class="flow"><li>線上審核</li><li class="key">自動去重排序</li><li>公告與遞補</li><li>稽核留痕</li></ul>
+          <ul class="flow"><li>線上審核</li><li>自動去重排序</li><li>公告與遞補</li><li>稽核留痕</li></ul>
         </div>
       </div>
       <div style="display:flex;justify-content:center;margin-top:22px;">
-        <button class="demo-btn" onclick="playDemos(['demo1.mp4','demo2.mp4'])"><span class="ic">▶</span>播放示範｜報名到報到一條龍</button>
+        <button class="demo-btn" onclick="playDemos(['demo1.mp4','demo2.mp4'])">示範</button>
       </div>
     </div>
     <div class="brandmark">系統架構 ｜ 三端一條龍</div>
@@ -418,10 +418,10 @@
     <h2 class="page-title">把 ISO 驗證，落實成本案的執行方式</h2>
     <div class="body">
       <div class="grid" style="grid-template-columns:0.8fr 2.1fr;align-items:stretch;">
-        <div class="card fill" style="justify-content:center;">
+        <div class="card" style="justify-content:center;border:2px solid var(--blue);">
           <h3 style="font-size:25px;">ISO 27001:2022</h3>
           <p style="font-size:18px;">資訊安全管理已通過驗證，作為本案資安基礎。</p>
-          <div class="card-foot" style="color:#FAD4E2;border-top-color:rgba(255,255,255,.25)">證號 ARES／TW／I2502021I</div>
+          <div class="card-foot">證號 ARES／TW／I2502021I</div>
         </div>
         <div style="display:flex;flex-direction:column;gap:13px;">
           <div class="stage-row">
@@ -531,7 +531,7 @@
   <section class="slide" data-page="13">
     <img class="logo-tr" src="images/ctkpro-logo.png" alt="CTK Pro" onerror="this.style.display='none'">
     <div class="thanks-wrap">
-      <h2 class="thanks" style="font-size:68px;line-height:1.3;letter-spacing:.02em;">讓<span class="em">每個孩子</span>，<br>都排到自己的位置</h2>
+      <h2 class="thanks" style="font-size:68px;line-height:1.3;letter-spacing:.02em;">讓<span class="em">每個孩子</span><br>都排到自己的位置</h2>
       <p class="thanks-tag">讓承辦少加班，讓家長更便利</p>
       <div class="thanks-foot">
         <div class="qr">
@@ -640,12 +640,14 @@
   prevBtn.addEventListener('click',e=>{e.stopPropagation();prev();});
   nextBtn.addEventListener('click',e=>{e.stopPropagation();next();});
 
-  // 點畫面左右半翻頁（避開備詢、按鈕、連結）
+  // 點畫面左右各 1/6 才翻頁；中間 2/3 留給選字／點按（避開備詢、按鈕、連結）
   document.addEventListener('click',e=>{
     if(vp.classList.contains('on'))return;
     if(qa.classList.contains('show'))return;
     if(e.target.closest('#navbar')||e.target.closest('a')||e.target.closest('button'))return;
-    (e.clientX>window.innerWidth/2)?next():prev();
+    const w=window.innerWidth;
+    if(e.clientX < w/6) prev();
+    else if(e.clientX > w*5/6) next();
   });
 
   // 觸控滑動
