@@ -609,9 +609,9 @@
   const vp=document.getElementById('vplayer'), vEl=vp.querySelector('video');
   let vQ=[], vI=0;
   window.playDemos=function(list){vQ=list;vI=0;vp.classList.add('on');vEl.muted=true;vLoad();};
-  function vLoad(){vEl.src=vQ[vI];vEl.currentTime=0;vEl.playbackRate=0.9;vEl.play().catch(()=>{});}
+  function vLoad(){vEl.src=vQ[vI];vEl.currentTime=0;vEl.playbackRate=0.8;vEl.play().catch(()=>{});}
   window.closeVideo=function(){vp.classList.remove('on');vEl.pause();vEl.removeAttribute('src');vEl.load();};
-  vEl.addEventListener('loadeddata',()=>{vEl.playbackRate=0.9;});  // 0.9 倍速；換 src 後重新套用
+  vEl.addEventListener('loadeddata',()=>{vEl.playbackRate=0.8;});  // 0.8 倍速；換 src 後重新套用
   vEl.addEventListener('ended',()=>{ (vI<vQ.length-1) ? (vI++,vLoad()) : closeVideo(); });
   vp.addEventListener('click',e=>{ if(e.target===vp) closeVideo(); });  // 點黑邊關閉，點影片不關
 
